@@ -1,16 +1,20 @@
 """
 edix-1: Mixing fonts
+
 Programming is usually done using monospace fonts. While proportional fonts are typically preferred for text (e.g. 
 in text documents, web pages, ...), programmers like to use monospace fonts because punctuation characters and 
 spaces are larger and therefore easier to read. On the other hand, words are easier to scan and recognize in 
 proportional fonts. Choosing a single font for programming is therefore means choosing between more readable 
 text and more readable punctuation.
+
 But what if the editor supported multiple fonts and applied the correct font for each syntactic element?
 This experiment explores this idea.
+
 You can change the font style in the upper-right corner. "Monospace" and "Sans" uniformly use a monospace / 
 sans-serif font for rendering the code, and "Mixed" uses monospace / sans-serif depending on the context.
 Comments, strings and some other elements are set to sans-serif, while punctuation, whitespace and keywords
 are rendered in monospace. There are differences depending on the language used.
+
 You can also edit the text in this box. Write some simple functions, toggle comments, etc. to get a feeling for the
 editing experience. You can always restore the initial text by clicking the 'Reset' button.
 """
