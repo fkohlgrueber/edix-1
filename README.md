@@ -20,7 +20,7 @@ But what if you didn't have to choose a single font? what if you could use diffe
 
 ## The experiment
 
-[![Demo](./doc/demo.gif)](./doc/demo.gif)
+[![Demo](./doc/demo.gif)](https://raw.githubusercontent.com/fkohlgrueber/edix-1/master/doc/demo.gif)
 
 TODO
 
