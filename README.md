@@ -51,10 +51,16 @@ You can locally host the experiment, e.g. by using Python's simple http server:
 python3 -m http.server
 ```
 
-
 ## Impressions
 
-TODO
+This section contains my personal impressions from using the experiment. You may disagree with some of the points below, and that's perfectly fine.
+
+- Comments in sans-serif are more compact and still more readable than in monospace.
+- Whitespace and punctuation characters are more readable in monospace.
+- Fonts changing during typing doesn't bother me. It can cause the cursor to jump horizontally, but I didn't find this to be irritating.
+- I'm not sure whether I prefer identifiers in monospace or in sans-serif. For longer identifiers, sans-serif is easier to read, but single character identifiers ("i", "x", ...) are tiny and I prefer monospace for those.
+- I like that Font ligatures are only used in the source code and not in comments / strings. For example, the two characters `->` are displayed as a pretty arrow when used as a type annotation in Python, while the string `"->"` wouldn't use the ligature. Different fonts can prevent ligatures from being used where they shouldn't be used.
+- Using mixed fonts, just like different fonts or syntax themes, won't make you a 10x developer. I can imagine that it might cause a minimal productivity increase, but don't expect too much. For me, the largest motivation is simply aesthetics. I'm spending a lot of time looking at code and so therefore want it to look good.
 
 ## Next steps
 
