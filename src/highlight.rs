@@ -73,8 +73,13 @@ pub fn highlight(s: &str, options: &RichContentOptions) -> Vec<Vec<Region>> {
 
     content_styled.into_iter().zip(scopes.into_iter()).map(
         |(a, scopes)| a.into_iter().zip(scopes.into_iter()).map(
-            |((s, sty), scope)| Region::new(s.replace('\n', ""), format!("{}{}", sty, font_for_scope(&scope, &options.font_selection)), scope)).collect()
+            |((s, sty), scope)| Region::new(
+                s.replace('\n', ""), 
+                format!("{}{}", sty, font_for_scope(&scope, &options.font_selection)), 
+                format!("{} ({})", scope, if scope_is_proportional(&scope) { "Sans" } else { "Monospace" })
+            )
         ).collect()
+    ).collect()
 }
 
 pub fn to_html_color(c: &syntect::highlighting::Color) -> String {
@@ -93,12 +98,7 @@ fn font_for_scope(s: &str, font_selection: &FontSelection) -> String {
         FontSelection::Monospace => mono,
         FontSelection::Sans => sans,
         FontSelection::Mixed => {
-            /*if s.starts_with("punctuation") || s.starts_with("meta") && s != "meta.block.rust" || s.starts_with("keyword") || s.starts_with("storage") {
-                mono
-            } else {
-                sans
-            }*/
-            if s.starts_with("comment") || s.starts_with("string") || s.starts_with("constant") && !s.starts_with("constant.character.escape") || s.starts_with("entity")|| s.starts_with("variable") || s.starts_with("meta.generic-name") || s.starts_with("support") {
+            if scope_is_proportional(s) {
                 sans
             } else {
                 mono
@@ -106,4 +106,14 @@ fn font_for_scope(s: &str, font_selection: &FontSelection) -> String {
         }
     };
     format!("font-family: {}; font-size: 15px;", f)
+}
+
+fn scope_is_proportional(s: &str) -> bool {
+    s.starts_with("comment") 
+    || s.starts_with("string") 
+    || s.starts_with("constant") && !s.starts_with("constant.character.escape") 
+    || s.starts_with("entity")
+    || s.starts_with("variable") 
+    || s.starts_with("meta.generic-name") 
+    || s.starts_with("support")
 }
