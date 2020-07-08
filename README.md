@@ -1,6 +1,6 @@
 # edix-1: Mixing Fonts
 
-[![LOC](https://tokei.rs/b1/github/fkohlgrueber/edix-1)](https://github.com/fkohlgrueber/edix-1)
+[![LOC](https://tokei.rs/b1/github/fkohlgrueber/edix-1?category=code)](https://github.com/fkohlgrueber/edix-1)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue)](https://github.com/fkohlgrueber/terminal-editor-rs/blob/master/LICENSE-APACHE)
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/fkohlgrueber/terminal-editor-rs/blob/master/LICENSE-MIT)
 
