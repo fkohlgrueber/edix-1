@@ -20,17 +20,21 @@ But what if you didn't have to choose a single font? what if you could use diffe
 
 ## The experiment
 
-**[Live demo](https://fkohlgrueber.github.io/edix-1/)**
-
 [![Demo](./doc/demo.gif)](https://raw.githubusercontent.com/fkohlgrueber/edix-1/master/doc/demo.gif)
 
-TODO
+**[Live demo](https://fkohlgrueber.github.io/edix-1/)**
 
-- Text field with syntax highlighting
-  - although not feature complete (no selections, cut/copy/paste, ...)
-- Written in Rust
-- Live at ...
-- uses a syntax highlighter (syntect) and defines additional rules for choosing a font based on the syntax kind identified by the highlighter
+The experiment consists of a text editing area and a settings panel. The settings panel can be used to set a color theme, a syntax and a font style. The color theme and syntax options are regular syntax highlighting options and the font style option is where it gets interesting.
+
+The experiment supports three font styles: "Monospace", "Sans" and "Mixed". The "Monospace" and "Sans" options render the whole source code using [Fira Code](https://github.com/tonsky/FiraCode) (Monospace) and [Fira Sans](https://github.com/mozilla/Fira) (Sans) respectively. The "Mixed" option uses both fonts, where each token in the source code is rendered depending on the token type. The current implementation is pretty simple and uses sans-serif for comments, strings and identifiers and monospace otherwise. While it works surprisingly well for different languages, there may be differences (e.g. identifiers may or may not be rendered as sans-serif) depending on the selected language. 
+
+The source text area can be edited. You can write functions, comment lines, etc. just like in a regular text editor. In the "Mixed" font sytle mode, the font type will change while editing. Try writing the keyword "return" character by character. Up to "retur", it is an identifier and rendered in sans-serif. Appending an "n" makes it a keyword which is rendered in monospace. Another interesting editing operation is commenting lines / blocks which also changes the font.
+
+### Implementation
+
+The experiment is written in [Rust](https://www.rust-lang.org/). It uses the [Yew web framework](https://yew.rs/) and [syntect](https://github.com/trishume/syntect) for syntax highlighting. Syntect assigns [scopes](https://www.sublimetext.com/docs/3/scope_naming.html) to each token in the source code. These scopes are used to decide which font to use for rendering.
+
+The text editor is custom-made and doesn't use standard html input elements. This allows total control over cursor movement and rendering, which will be required in later experiments. I tried to keep the implementation simple, so some basic editing operations are missing. There are no selections and no support for cut/copy/paste. Basic editing (simple cursor movement, text input and removal) is implemented though.
 
 ### Build
 
@@ -54,8 +58,18 @@ TODO
 
 ## Next steps
 
-TODO
-- Alignment (ref: Elastic tabstops)
-- Line-wrapping for comments
-- Block-layout
+So what's next? While I believe that `edix-1`'s mixed font rendering is an improvement over traditional code editors, there are a few other ideas I'd like to pursue in future `edix-X`s. The following list contains a couple of ideas. Some of these might be implemented on top of `edix-1`, others as independant projects.
+
+- *Alignment*: Alignment is often seen as an advantage of monospace text, which naturally renders as a grid with aligned columns. When using non-proportional fonts, one has to explicitly handle alignment. One possiblility would be [Elastic tabstops](http://nickgravgaard.com/elastic-tabstops/), possibly integrated with language-specific pretty-printers.
+- *Line-wrapping*: wrapping lines that don't fit into the current viewport is standard in WYSIWYG-Editors and the web, but programmers still manually handle line breaks when writing code. Especially for documentation, I find this pretty annoying. A future `edix-X` version could provide line-wrapping for source code that respects indentation. You could roughly think of this as a pretty-printer set to the current editor width running after each key press.
+- *Separation*: Source code is stored and edited using the same representation (a character sequence containing human-readable syntax). Storage and editing have different (and sometimes conflicting) requirements, and I believe that using different representations for them would have positive effects in various areas (evolution / personalization of syntax, compatibility of stored code, ...).
+- *Non-text elements*: This is a far stretch, but being able to put diagrams in documentation comments or math formulas in source code could be interesting too. 
 - ...
+
+## Summary
+
+This was `edix-1`, the first (and hopefully not last) experiment in this series. I hope you enjoyed playing with it and reading through this page. What do you think? Would you like to use a mixed-font code editor? Do you agree that proportional fonts should have their place in source code files? I'd be interested in hearing your thoughts, so please feel free to send an [e-mail](mailto:felix.kohlgrueber+blog@gmail.com) or comment **TODO: where to comment**.
+
+If don't want to miss updates and future prototypes, you can subscribe to my [blog](https://fkohlgrueber.github.io/) or follow me on [twitter](https://twitter.com/FKohlgrueber).
+
+I'm looking forward to interesting conversations, thanks in advance 😉
