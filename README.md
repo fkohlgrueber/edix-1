@@ -18,7 +18,7 @@ Given the two arguments above, which font should be used for programming? For th
 
 But what if you didn't have to choose a single font? what if you could use different fonts for different parts of your source code? Writing a comment would automatically change to a proportional font, while whitespace and punctuation characters would use a monospace font. This experiment explores this idea.
 
-## The experiment
+## The Experiment
 
 [![Demo](./doc/demo.gif)](https://raw.githubusercontent.com/fkohlgrueber/edix-1/master/doc/demo.gif)
 
