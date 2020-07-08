@@ -74,7 +74,7 @@ So what's next? While I believe that `edix-1`'s mixed font rendering is an impro
 
 ## Summary
 
-This was `edix-1`, the first (and hopefully not last) experiment in this series. I hope you enjoyed playing with it and reading through this page. What do you think? Would you like to use a mixed-font code editor? Do you agree that proportional fonts should have their place in source code files? I'd be interested in hearing your thoughts, so please feel free to send an [e-mail](mailto:felix.kohlgrueber+blog@gmail.com), comment on [twitter]() or join the discussion in the [Future of Coding](https://futureofcoding.org/community) slack group.
+This was `edix-1`, the first (and hopefully not last) experiment in this series. I hope you enjoyed playing with it and reading through this page. What do you think? Would you like to use a mixed-font code editor? Do you agree that proportional fonts should have their place in source code files? I'd be interested in hearing your thoughts, so please feel free to send an [e-mail](mailto:felix.kohlgrueber+blog@gmail.com), comment on [twitter](https://twitter.com/FKohlgrueber/status/1280881676500054016) or join the discussion in the [Future of Coding](https://futureofcoding.org/community) slack group.
 
 If don't want to miss updates and future prototypes, you can subscribe to my [blog](https://fkohlgrueber.github.io/) or follow me on [twitter](https://twitter.com/FKohlgrueber).
 
