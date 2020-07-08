@@ -1,5 +1,7 @@
 # edix-1: Mixing Fonts
 
+[![LOC](https://tokei.rs/b1/github/fkohlgrueber/edix-1)](https://github.com/fkohlgrueber/edix-1)
+
 Editor experiment 1: 
 
 TODO: Description...
